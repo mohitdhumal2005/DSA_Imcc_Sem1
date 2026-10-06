@@ -1,4 +1,4 @@
-#creation of singly linked list
+#creation of singly linked list and alternate display
 
 class Node:
     def __init__(self, val):
