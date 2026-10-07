@@ -20,8 +20,10 @@ class LinkedList:
          count=0
          while temp:
               count+=1
+              print(temp.data,end="->")
               temp=temp.next
-         print(count)
+         print("None")
+         return count
 list=LinkedList()
 n1=Node(10)
 n2=Node(20)
@@ -31,3 +33,4 @@ list.append(n2)
 list.append(n3)
 list.append(Node(40))
 list.print()
+print(list.print())
