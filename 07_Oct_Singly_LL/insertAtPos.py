@@ -32,7 +32,30 @@ class SinglyLL:
                 temp = temp.next
             print("None")
     
+    def insertAtPos(self,data,pos):
+        new_node = Node(data)
+        if pos<1 or pos>self.countList()+1:
+            print("Inavlid Postion")
+        elif(pos==1):
+            new_node.next = self.head
+            self.head = new_node
+        else:
+            temp = self.head
+            for i in range(pos-2):
+                temp = temp.next
+            new_node.next = temp.next
+            temp.next = new_node
+            
     def countList(self):
+        count = 0
+        if(self.head == None):
+            print("List is Empty!")
+        else:
+            temp = self.head
+            while(temp):
+                count = count+1
+                temp = temp.next
+            return count
         
 
 ob1 = SinglyLL()
@@ -44,4 +67,16 @@ ob1.printList()
 for x in [10,20,30,40]:
     ob1.insertAtEnd(x)
 ob1.printList()
-        
+
+print(ob1.countList())
+
+ob1.insertAtPos(33,0)
+ob1.insertAtPos(34,8)
+ob1.printList()
+
+ob1.insertAtEnd(50)
+ob1.printList()
+print(ob1.countList())
+ob1.insertAtPos(60,8)
+ob1.printList()
+ob1.insertAtPos(63,10)
