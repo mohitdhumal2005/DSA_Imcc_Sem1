@@ -1,3 +1,10 @@
+# 1. Creating LinkedList
+# 2. Printing LinkdedList
+# 3. Counting LinkedList
+# 4. Inserting at Beginning
+# 5. Inserting at End
+# 6. Inserting at Specific Position
+
 class Node:
     def __init__(self,data):
         self.data = data
