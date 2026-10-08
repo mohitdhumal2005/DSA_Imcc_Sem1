@@ -1,19 +1,19 @@
-class Node:
+class Node: #Creating of Node Class
     def __init__(self,data):
         self.data = data
         self.next = None
 
-class SinglyLL:
+class SinglyLL: #SinglyLL Class Created
     
-    def __init__(self):
+    def __init__(self):  #init() method for head node
         self.head = None
     
-    def insertAtBegin(self,data):
+    def insertAtBegin(self,data):  #inserting the node from the start
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
     
-    def insertAtEnd(self, data):
+    def insertAtEnd(self, data):    #insertion of data from the end i.e. appending
         new_node = Node(data)
         if(self.head == None):
             self.head = new_node
@@ -23,7 +23,7 @@ class SinglyLL:
                 temp = temp.next
             temp.next = new_node
     
-    def insertAtPos(self,data,pos):
+    def insertAtPos(self,data,pos):    #inserting the data at specific position
         new_node = Node(data)
         if(pos<1 or pos>self.countLL()+1):
             print("Invalid position")
@@ -39,13 +39,13 @@ class SinglyLL:
             new_node.next = temp.next
             temp.next = new_node
     
-    def deleteFirst(self):
+    def deleteFirst(self):          #deleting the First Node
         if(self.head == None):
             print("List is Emmpty!")
         else:
             self.head = self.head.next
     
-    def deleteLast(self):
+    def deleteLast(self):           #deleting the Last Node
         if(self.head == None):
             print("List is Empty!")
         elif(self.head.next == None):
@@ -56,7 +56,7 @@ class SinglyLL:
                 temp = temp.next
             temp.next = None
     
-    def deleteByPos(self,pos):
+    def deleteByPos(self,pos):          #deleting the node By its Position
         if(pos<1 or pos>self.countLL()):
             print("Invalid Position!")
         elif (pos==1):
@@ -67,12 +67,21 @@ class SinglyLL:
                 temp = temp.next
             temp.next = temp.next.next
     
-    def deleteByValue(self,value):
+    def deleteByValue(self,value):      #deleting the node by the Value
         if(self.head == None):
             print("List is Empty!")
-        elif()
+        elif(self.head.data == value):
+            self.head = self.head.next
+        else:
+            temp = self.head
+            while(temp.next!=None and temp.next.data!=value):
+                temp = temp.next
+            if (temp.next==None):
+                print(value,"not found")
+            else:
+                temp.next = temp.next.next
     
-    def printList(self):
+    def printList(self):            #Printing the SLL
         if (self.head == None):
             print("List is Empty!")
         else:
@@ -82,7 +91,7 @@ class SinglyLL:
                 temp = temp.next
             print("None")
     
-    def countLL(self):
+    def countLL(self):          #Counting the nodes in the SLL
         count = 0
         if(self.head == None):
             print("List is Empty!")
@@ -123,6 +132,10 @@ print("Total No. of Node: ",ob1.countLL())
 
 for x in [5,10,15,18,19]:
     ob1.insertAtEnd(x)
+ob1.printList()
+print("Total No. of Node: ",ob1.countLL())
+
+ob1.deleteByValue(201)
 ob1.printList()
 print("Total No. of Node: ",ob1.countLL())
 
