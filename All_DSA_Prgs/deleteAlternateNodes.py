@@ -1,4 +1,4 @@
-""" This is the program specifically for Deleting the Middle Node! """
+""" This is the program specifically for Deleting the Alternate Nodes! """
 
 class Node:                     #Creating a Node Class which contains data and pointer to next node
     def __init__(self,data):
@@ -55,7 +55,7 @@ class SinglyLL:             # Creating Class SinglyLL which conatins Operations 
                     temp = temp.next
                 print("Middle Node:",temp.data)
     
-    def deleteAlternateNodes(self):
+    def deleteAlternateNodes(self): # Delete alternate nodes
         if self.head == None:
             print("List is Empty!")
         else:
