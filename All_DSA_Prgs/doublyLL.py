@@ -1,4 +1,8 @@
-# Doubly Linked List Program--
+# # Doubly Linked List Program--
+# 1. Append the list
+# 2. Insert at Position
+# 3. Print list
+# 4. Print list in reverse order
 class Node:
     def __init__(self,data):
         self.data = data
